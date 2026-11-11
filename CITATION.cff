@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below, together with the dataset."
+title: "HMCP: an always-valid chemical-cleaning date for membrane bioreactors"
+abstract: >-
+  Code for physics-constrained prognostics of irreversible membrane fouling. Crossflow TMP is converted to
+  viscosity-corrected resistance, decomposed into reversible and irreversible parts, and forecast with a
+  hard-monotone cumulative parameterisation (HMCP) that returns a unique cleaning date by construction.
+authors:
+  - family-names: Alam
+    given-names: Gulzar
+  - name: Ihsanullah
+version: 1.0.0
+date-released: 2026-11-11
+license: MIT
+repository-code: "https://github.com/gulzara3/hmcp-mbr-cleaning-date"
+keywords:
+  - membrane bioreactor
+  - membrane fouling
+  - chemical cleaning
+  - prognostics
+  - physics-constrained machine learning
+  - resistance-in-series
+references:
+  - type: data
+    title: "Lab-scale membrane bioreactor (MBR) high-frequency online data"
+    authors:
+      - family-names: Naessens
+        given-names: Wouter
+      - family-names: Maere
+        given-names: Thomas
+      - family-names: Van Hauwermeiren
+        given-names: Daan
+      - family-names: Nopens
+        given-names: Ingmar
+    publisher:
+      name: Zenodo
+    year: 2017
+    doi: 10.5281/zenodo.821585

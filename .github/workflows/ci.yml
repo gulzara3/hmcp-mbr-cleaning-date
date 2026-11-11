@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install check tools
+        run: pip install ruff nbformat
+      - name: Python syntax
+        run: |
+          python -m py_compile scripts/*.py
+          ruff check --select E9,F63,F7 scripts
+      - name: Notebook format
+        run: python -c "import nbformat; nbformat.validate(nbformat.read('notebooks/HMCP_cleaning_date_forecast.ipynb', as_version=4)); print('notebook valid')"
+      - name: Download script help
+        run: python scripts/download_data.py --help
